@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050508;
+  --foreground: #fafafa;
+  --accent: #8b5cf6;
+  --accent-muted: #a78bfa;
+  --accent-blue: #3b82f6;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glow-violet: rgba(139, 92, 246, 0.4);
+  --glow-blue: rgba(59, 130, 246, 0.3);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fafafa;
+    --foreground: #0a0a0f;
+    --glass: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* Gradient mesh background utility */
+.bg-gradient-mesh {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(59, 130, 246, 0.1), transparent),
+    radial-gradient(ellipse 60% 40% at 0% 50%, rgba(139, 92, 246, 0.1), transparent);
+}
+
+/* Section top divider (optional) */
+.section-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glow-sm {
+    box-shadow: 0 0 40px -10px var(--glow-violet);
+  }
+  .glow-md {
+    box-shadow: 0 0 60px -15px var(--glow-violet), 0 0 40px -10px var(--glow-blue);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
