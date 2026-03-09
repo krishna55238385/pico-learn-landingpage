@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function CTA() {
   return (
-    <section id="cta" className="relative py-28 md:py-36 overflow-hidden">
+    <section id="cta" className="relative py-28 md:py-36 overflow-hidden scroll-mt-24">
       {/* Animated gradient background */}
       <motion.div
         animate={{

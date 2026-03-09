@@ -12,15 +12,37 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glow-violet: rgba(139, 92, 246, 0.4);
   --glow-blue: rgba(59, 130, 246, 0.3);
+  /* For shadcn-style components (e.g. neo-minimal-footer) */
+  --card: rgba(255, 255, 255, 0.03);
+  --card-foreground: var(--foreground);
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: rgba(255, 255, 255, 0.45);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(139, 92, 246, 0.5);
+  --destructive: rgba(239, 68, 68, 0.8);
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not(.dark) {
     --background: #fafafa;
     --foreground: #0a0a0f;
     --glass: rgba(0, 0, 0, 0.03);
     --glass-border: rgba(0, 0, 0, 0.08);
   }
+}
+
+/* Force dark theme when .dark is set (e.g. layout) */
+html.dark {
+  --background: #050508;
+  --foreground: #fafafa;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --card: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: rgba(255, 255, 255, 0.45);
+  --input: rgba(255, 255, 255, 0.08);
 }
 
 html {
@@ -30,6 +52,7 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
+  min-height: 100vh;
 }
 
 /* Gradient mesh background utility */

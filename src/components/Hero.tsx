@@ -14,8 +14,8 @@ const barHeights = Array.from({ length: WAVEFORM_BARS }, () => 16 + Math.random(
 function AnimatedWaveformBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 flex items-center justify-center opacity-[0.12]">
-        <div className="flex items-end gap-0.5 h-32 w-full max-w-4xl px-8">
+      <div className="absolute inset-0 flex items-center justify-center opacity-[0.14]">
+        <div className="flex items-end gap-0.5 h-36 w-full max-w-4xl px-8">
           {barHeights.map((h, i) => (
             <motion.div
               key={i}
@@ -118,21 +118,21 @@ function HeroLiveDemo() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="mt-24 md:mt-32 max-w-4xl mx-auto px-4"
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay: 0.15 }}
+      className="mt-20 md:mt-28 max-w-4xl mx-auto px-4"
     >
       <div className="relative">
-        <p className="text-center text-xs uppercase tracking-wider text-neutral-500 mb-4">
+        <p className="text-center text-xs font-medium uppercase tracking-widest text-neutral-500 mb-5">
           Live call simulator
         </p>
         <div
-          className="absolute inset-0 blur-3xl opacity-50 bg-gradient-to-r from-purple-600 via-indigo-500 to-cyan-500 rounded-full -z-10"
+          className="absolute inset-0 blur-3xl opacity-40 bg-gradient-to-r from-purple-600 via-indigo-500 to-cyan-500 rounded-full -z-10"
           aria-hidden
         />
-        <div className="relative bg-black/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 overflow-x-hidden overflow-y-visible shadow-2xl">
+        <div className="relative bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 overflow-x-hidden overflow-y-visible shadow-2xl ring-1 ring-white/5">
           {/* AI Listening + analyzing indicator */}
           <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
             <div className="text-xs text-purple-300/90 flex items-center gap-2">
@@ -194,13 +194,13 @@ function HeroLiveDemo() {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-mesh">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-8 bg-gradient-mesh">
       <AnimatedWaveformBackground />
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-violet-500/15 blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full bg-blue-600/12 blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-indigo-500/8 blur-[150px]" />
+        <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-violet-500/20 blur-[120px]" />
+        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full bg-blue-600/15 blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-indigo-500/10 blur-[150px]" />
       </div>
 
       {floatingCards.map((card) => (
@@ -209,96 +209,106 @@ export function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-2.5 mb-10"
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2.5 rounded-full border border-emerald-500/30 bg-emerald-500/5 backdrop-blur-md px-4 py-2.5 mb-8 shadow-[0_0_24px_-4px_rgba(52,211,153,0.2)]"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          <span className="text-sm text-neutral-400">
+          <span className="text-sm font-medium text-emerald-200/90">
             AI-powered sales intelligence
           </span>
         </motion.div>
 
-        {/* Headline with glowing gradient behind */}
-        <div className="relative inline-block px-2">
+        {/* Headline — gradient and emphasis */}
+        <div className="relative">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.15 }}
-            className="absolute -inset-6 bg-gradient-to-r from-violet-500/25 via-purple-500/20 to-blue-500/25 rounded-3xl blur-3xl -z-10"
+            transition={{ delay: 0.1 }}
+            className="absolute -inset-8 bg-gradient-to-r from-violet-500/30 via-purple-500/20 to-blue-500/30 rounded-3xl blur-3xl -z-10"
             aria-hidden
           />
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground max-w-5xl mx-auto leading-[1.08] relative"
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl mx-auto leading-[1.08]"
           >
-            Your AI Sales Manager For Every Sales Call.
+            <span className="text-foreground">Your </span>
+            <span className="bg-gradient-to-r from-violet-300 via-purple-300 to-violet-400 bg-clip-text text-transparent">
+              AI Sales Manager
+            </span>
+            <span className="text-foreground"> for every sales call</span>
           </motion.h1>
         </div>
 
         <motion.p
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-10 text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 text-lg sm:text-xl text-neutral-400 max-w-xl mx-auto leading-relaxed"
         >
-          Picolearn listens to conversations, detects sentiment and objections,
-          and coaches your sales team automatically.
+          Listen to every call. Detect sentiment and objections. Coach your team automatically.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
             href="#cta"
-            className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-9 py-4 text-base font-semibold text-white hover:from-violet-500 hover:to-purple-500 transition-all shadow-xl shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-[1.02]"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-10 py-4 text-base font-semibold text-white hover:from-violet-500 hover:to-purple-500 transition-all shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-[1.03]"
           >
             Start free trial
+            <svg className="ml-2 w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </a>
           <a
             href="#how-it-works"
-            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-9 py-4 text-base font-medium text-foreground hover:bg-white/10 hover:border-white/20 transition-colors"
+            className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm px-10 py-4 text-base font-medium text-foreground hover:bg-white/10 hover:border-white/25 transition-colors"
           >
             See how it works
           </a>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-neutral-500"
+          transition={{ duration: 0.45, delay: 0.45 }}
+          className="mt-12 inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm px-6 py-4 text-sm text-neutral-500"
         >
-          <span className="flex items-center gap-3">
-            <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <span className="flex items-center gap-2.5">
+            <svg className="w-5 h-5 text-emerald-500/90 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            Used by high-performance revenue teams
+            High-performance revenue teams
           </span>
-          <span className="flex items-center gap-3">
-            <svg className="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <span className="flex items-center gap-2.5">
+            <svg className="w-5 h-5 text-blue-500/90 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            SOC2-ready architecture
+            SOC2-ready
           </span>
-          <span className="flex items-center gap-3">
-            <svg className="w-5 h-5 text-violet-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <span className="flex items-center gap-2.5">
+            <svg className="w-5 h-5 text-violet-500/90 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
             </svg>
-            Works with Zoom, Dialer, CRM systems
+            Zoom, Dialer, CRM
           </span>
         </motion.div>
 
-        {/* Live demo: waveform + typing transcript + triggered insights */}
+        {/* Live demo */}
         <HeroLiveDemo />
       </div>
     </section>

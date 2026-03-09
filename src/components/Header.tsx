@@ -3,6 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+function scrollToCta(e: React.MouseEvent) {
+  e.preventDefault();
+  document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
+}
+
 const navLinks = [
   { href: "#why-picolearn", label: "Why Picolearn" },
   { href: "#features", label: "Features" },
@@ -58,6 +63,7 @@ export function Header() {
             </a>
             <a
               href="#cta"
+              onClick={scrollToCta}
               className="hidden sm:inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white hover:from-violet-500 hover:to-purple-500 transition-all duration-200 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/35 hover:scale-[1.02]"
             >
               Get started
@@ -99,7 +105,10 @@ export function Header() {
                 ))}
                 <a
                   href="#cta"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    scrollToCta(e);
+                    setMobileOpen(false);
+                  }}
                   className="mt-2 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-3 text-sm font-semibold text-white hover:from-violet-500 hover:to-purple-500"
                 >
                   Get started

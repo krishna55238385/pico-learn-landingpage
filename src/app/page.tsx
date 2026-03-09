@@ -12,7 +12,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Integrations } from "@/components/Integrations";
 import { CTA } from "@/components/CTA";
 import { FooterCTA } from "@/components/FooterCTA";
-import { Footer } from "@/components/Footer";
+import { NeoMinimalFooter } from "@/components/ui/neo-minimal-footer";
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
         <CTA />
         <FooterCTA />
       </main>
-      <Footer />
+      <NeoMinimalFooter />
     </>
   );
 }

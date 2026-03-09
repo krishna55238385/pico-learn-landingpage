@@ -26,6 +26,10 @@ export function FooterCTA() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#cta"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-8 py-4 text-base font-bold text-white hover:from-violet-500 hover:to-purple-500 transition-all shadow-xl shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-[1.02]"
           >
             Get Started Now

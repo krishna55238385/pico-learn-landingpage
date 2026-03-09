@@ -12,6 +12,18 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+        border: "var(--border)",
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
+        input: "var(--input)",
+        ring: "var(--ring)",
+        destructive: "var(--destructive)",
         accent: {
           DEFAULT: "var(--accent)",
           muted: "var(--accent-muted)",
